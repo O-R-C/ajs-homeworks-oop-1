@@ -13,11 +13,11 @@ export default class Character {
       throw new Error("имя должно быть строкой");
     }
 
-    if (name.length < 2) {
+    if (name.trim().length < 2) {
       throw new Error("длина имени должна быть больше двух символов");
     }
 
-    if (name.length > 10) {
+    if (name.trim().length > 10) {
       throw new Error("длина имени не может быть больше 10 символов");
     }
 

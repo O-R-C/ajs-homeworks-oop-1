@@ -1,3 +1,8 @@
 import Character from "./Classes/Character";
+import Bowman from "./Classes/Bowman";
 
-console.log(Character);
+const classes = [Character, Bowman];
+
+classes.forEach((characterClass) =>
+  console.log(new characterClass(`${characterClass.name}`))
+);

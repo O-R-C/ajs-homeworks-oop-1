@@ -38,4 +38,14 @@ describe("test class Character", () => {
       });
     });
   });
+
+  test("correct create", () => {
+    const result = new Character("Character");
+
+    expect(result).toEqual({
+      level: 1,
+      health: 100,
+      _name: "Character",
+    });
+  });
 });

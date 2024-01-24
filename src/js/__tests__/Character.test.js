@@ -25,7 +25,7 @@ describe("test class Character", () => {
 
       test.each(names)("%p", (name) => {
         expect(() => new Character(name)).toThrow(
-          "длина имени должна быть больше двух символов"
+          "длина имени должна быть больше одного символа"
         );
       });
     });

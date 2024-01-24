@@ -14,7 +14,7 @@ export default class Character {
     }
 
     if (name.trim().length < 2) {
-      throw new Error("длина имени должна быть больше двух символов");
+      throw new Error("длина имени должна быть больше одного символа");
     }
 
     if (name.trim().length > 10) {

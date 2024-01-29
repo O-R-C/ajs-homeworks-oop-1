@@ -1,16 +1,6 @@
 import Character from "../Classes/Character";
 
 describe("test class Character", () => {
-  describe("correct name", () => {
-    const names = ["Андрей", "Вовчик", "Денис", "Нагибатор", "Язь"];
-
-    test.each(names)("%p", (name) => {
-      const character = new Character(name);
-
-      expect(character.name).toBe(name);
-    });
-  });
-
   describe("name not String", () => {
     const names = [123, true, null, [], { name: "Петр" }, undefined];
 
@@ -39,13 +29,15 @@ describe("test class Character", () => {
     });
   });
 
-  test("correct create", () => {
-    const result = new Character("Character");
+  test("create without type", () => {
+    expect(() => new Character("Test")).toThrow(
+      "тип персонажа должен быть строкой"
+    );
+  });
 
-    expect(result).toEqual({
-      level: 1,
-      health: 100,
-      _name: "Character",
-    });
+  test("create without allowed type", () => {
+    expect(() => new Character("Test", "")).toThrow(
+      "тип персонажа не известен"
+    );
   });
 });

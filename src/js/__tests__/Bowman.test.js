@@ -14,6 +14,12 @@ describe("test class Bowman", () => {
     });
   });
 
+  test("get name", () => {
+    const result = new Bowman("Bowman");
+
+    expect(result.name).toBe("Bowman");
+  });
+
   test("nice", () => {
     const result = new Bowman("Bowman", "Daemon");
 
